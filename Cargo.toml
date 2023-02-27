@@ -1,0 +1,23 @@
+[package]
+name = "kvstore"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "kvstore-server"
+path = "src/server.rs"
+
+[[bin]]
+name = "kvstore-client"
+path = "src/client.rs"
+
+[dependencies]
+tonic = "0.8.3"
+prost = "0.11.8"
+tokio = { version = "1.25.0", features = ["macros", "rt-multi-thread"]}
+rand = "0.8.5"
+
+[build-dependencies]
+tonic-build = "0.8.4"
